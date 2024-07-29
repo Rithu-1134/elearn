@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development with Node.js</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Backend Development with Node.js</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction to Node.js</a></li>
+                <li><a href="#setup">Setting Up Node.js</a></li>
+                <li><a href="#basic-server">Creating a Basic Node.js Server</a></li>
+                <li><a href="#npm">Working with npm</a></li>
+                <li><a href="#express">Building a RESTful API with Express.js</a></li>
+                <li><a href="#databases">Working with Databases</a></li>
+                <li><a href="#middleware">Middleware and Error Handling</a></li>
+                <li><a href="#deployment">Deployment and Best Practices</a></li>
+                <li><a href="#summary">Summary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>1. Introduction to Node.js</h2>
+            <h3>What is Node.js?</h3>
+            <p><strong>Definition:</strong> Node.js is an open-source, cross-platform JavaScript runtime that allows you to run JavaScript code on the server side. It is designed for building scalable network applications and utilizes an event-driven, non-blocking I/O model.</p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Asynchronous and Event-Driven:</strong> Handles multiple connections efficiently without blocking the execution of code.</li>
+                <li><strong>Single Programming Language:</strong> JavaScript is used for both client-side and server-side development.</li>
+                <li><strong>npm (Node Package Manager):</strong> Provides access to a vast ecosystem of open-source libraries and tools.</li>
+            </ul>
+            <h3>Node.js Architecture</h3>
+            <ul>
+                <li><strong>Event Loop:</strong> Manages asynchronous operations by executing tasks when their associated events are triggered.</li>
+                <li><strong>Non-Blocking I/O:</strong> Allows the server to handle multiple requests concurrently without waiting for I/O operations to complete.</li>
+            </ul>
+        </section>
+
+        <section id="setup">
+            <h2>2. Setting Up Node.js</h2>
+            <h3>Installation</h3>
+            <ul>
+                <li><strong>Download Node.js:</strong> Visit the official Node.js website and download the installer for your operating system.</li>
+                <li><strong>Install Node.js:</strong> Run the installer and follow the on-screen instructions. This will install both Node.js and npm.</li>
+            </ul>
+            <h3>Verifying Installation</h3>
+            <pre><code>node -v
+npm -v</code></pre>
+        </section>
+
+        <section id="basic-server">
+            <h2>3. Creating a Basic Node.js Server</h2>
+            <h3>Hello World Server</h3>
+            <p>Create a file named <code>server.js</code>:</p>
+            <pre><code>const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});</code></pre>
+            <p>Run the server:</p>
+            <pre><code>node server.js</code></pre>
+            <p>Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser to see "Hello World."</p>
+        </section>
+
+        <section id="npm">
+            <h2>4. Working with npm</h2>
+            <h3>Initializing a Project</h3>
+            <pre><code>mkdir my-project
+cd my-project
+npm init</code></pre>
+            <p>Follow the prompts to create a <code>package.json</code> file.</p>
+            <h3>Installing Packages</h3>
+            <p>Example: Installing Express, a popular Node.js web framework.</p>
+            <pre><code>npm install express</code></pre>
+            <h3>Using package.json</h3>
+            <ul>
+                <li><strong>Adding Dependencies:</strong> Specify dependencies in the <code>package.json</code> file.</li>
+                <li><strong>Scripts:</strong> Define scripts for common tasks like starting the server.</li>
+            </ul>
+        </section>
+
+        <section id="express">
+            <h2>5. Building a RESTful API with Express.js</h2>
+            <p>Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications.</p>
+            <h3>Setting Up Express.js</h3>
+            <pre><code>npm install express</code></pre>
+            <h3>Create a Basic Express Server</h3>
+            <p>Create a file named <code>app.js</code>:</p>
+            <pre><code>const express = require('express');
+const app = express();
+const port = 3000;
+
+// Middleware to parse JSON
+app.use(express.json());
+
+// Route to handle GET requests
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Route to handle POST requests
+app.post('/data', (req, res) => {
+  res.send(`Received data: ${JSON.stringify(req.body)}`);
+});
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});</code></pre>
+            <h3>Start the Server</h3>
+            <pre><code>node app.js</code></pre>
+            <p>Test the API endpoints using tools like Postman or cURL.</p>
+        </section>
+
+        <section id="databases">
+            <h2>6. Working with Databases</h2>
+            <h3>MongoDB</h3>
+            <p>Node.js can be used with various databases. Here’s how to connect to MongoDB and MySQL.</p>
+            <h4>Install Mongoose:</h4>
+            <pre><code>npm install mongoose</code></pre>
+            <h4>Connect to MongoDB</h4>
+            <p>Add to <code>app.js</code>:</p>
+            <pre><code>const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/mydatabase', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});</code></pre>
+            <h4>Define a Model</h4>
+            <pre><code>const Schema = mongoose.Schema;
+
+const UserSchema = new Schema({
+  name: String,
+  email: String
+});
+
+const User = mongoose.model('User', UserSchema);
+
+app.post('/users', async (req, res) => {
+  const user = new User(req.body);
+  await user.save();
+  res.status(201).send(user);
+});</code></pre>
+
+            <h3>MySQL</h3>
+            <h4>Install MySQL Node.js Driver:</h4>
+            <pre><code>npm install mysql</code></pre>
+            <h4>Connect to MySQL</h4>
+            <p>Add to <code>app.js</code>:</p>
+            <pre><code>const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'mydatabase'
+});
+
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('Connected to MySQL');
+});
+
+app.get('/users', (req, res) => {
+  connection.query('SELECT * FROM users', (err, results) => {
+    if (err) throw err;
+    res.send(results);
+  });
+});</code></pre>
+        </section>
+
+        <section id="middleware">
+            <h2>7. Middleware and Error Handling</h2>
+            <h3>Using Middleware</h3>
+            <p>Example: Logging Requests</p>
+            <pre><code>app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});</code></pre>
+
+            <h3>Error Handling Middleware</h3>
+            <pre><code>app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});</code></pre>
+        </section>
+
+        <section id="deployment">
+            <h2>8. Deployment and Best Practices</h2>
+            <h3>Deployment</h3>
+            <ul>
+                <li><strong>Heroku:</strong> A platform-as-a-service (PaaS) for deploying Node.js applications.</li>
+                <li><strong>Docker:</strong> Containerization technology for deploying applications in a consistent environment.</li>
+            </ul>
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Use Environment Variables:</strong> Manage configuration settings and sensitive information.</li>
+                <li><strong>Code Structure:</strong> Organize code into modules for maintainability.</li>
+                <li><strong>Security:</strong> Implement security measures like input validation and protection against common vulnerabilities (e.g., XSS, CSRF).</li>
+            </ul>
+        </section>
+
+        <section id="summary">
+            <h2>9. Summary</h2>
+            <ul>
+                <li><strong>Introduction to Node.js:</strong> Features, architecture, and setup.</li>
+                <li><strong>Basic Server Creation:</strong> Using Node.js and Express.</li>
+                <li><strong>Working with Databases:</strong> MongoDB and MySQL integration.</li>
+                <li><strong>Middleware and Error Handling:</strong> Implementing middleware and handling errors.</li>
+                <li><strong>Deployment and Best Practices:</strong> Techniques for deploying and maintaining Node.js applications.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

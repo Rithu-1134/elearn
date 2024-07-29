@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensors and Actuators in Robotics</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Sensors and Actuators in Robotics</h1>
+    </header>
+
+    <main>
+        <section id="section1" class="course-section">
+            <h2>Sensors in Robotics</h2>
+            <p><strong>Definition:</strong> Sensors are devices that detect changes in the environment and send information to the robot's control system. They convert physical phenomena (e.g., light, temperature, pressure) into electrical signals that can be processed by the robot's software.</p>
+            <h3>Types of Sensors:</h3>
+            <h4>Proximity Sensors:</h4>
+            <p><strong>Function:</strong> Detect the presence of objects without physical contact.</p>
+            <p><strong>Examples:</strong> Infrared (IR) sensors, ultrasonic sensors, capacitive sensors.</p>
+            <p><strong>Applications:</strong> Obstacle avoidance, object detection.</p>
+            <h4>Light Sensors:</h4>
+            <p><strong>Function:</strong> Measure light intensity.</p>
+            <p><strong>Examples:</strong> Photodiodes, phototransistors, Light Dependent Resistors (LDRs).</p>
+            <p><strong>Applications:</strong> Line-following robots, ambient light detection.</p>
+            <h4>Temperature Sensors:</h4>
+            <p><strong>Function:</strong> Measure temperature.</p>
+            <p><strong>Examples:</strong> Thermistors, thermocouples, infrared temperature sensors.</p>
+            <p><strong>Applications:</strong> Environmental monitoring, temperature regulation.</p>
+            <h4>Pressure Sensors:</h4>
+            <p><strong>Function:</strong> Measure pressure.</p>
+            <p><strong>Examples:</strong> Barometric pressure sensors, piezoelectric sensors.</p>
+            <p><strong>Applications:</strong> Weather stations, industrial processes.</p>
+            <h4>Touch Sensors:</h4>
+            <p><strong>Function:</strong> Detect physical contact or pressure.</p>
+            <p><strong>Examples:</strong> Tactile sensors, force-sensitive resistors (FSRs).</p>
+            <p><strong>Applications:</strong> Robotic grippers, interactive robots.</p>
+            <h4>Vision Sensors:</h4>
+            <p><strong>Function:</strong> Capture visual information.</p>
+            <p><strong>Examples:</strong> Cameras, LiDAR (Light Detection and Ranging), time-of-flight sensors.</p>
+            <p><strong>Applications:</strong> Object recognition, navigation, mapping.</p>
+            <h4>Inertial Measurement Units (IMUs):</h4>
+            <p><strong>Function:</strong> Measure orientation, acceleration, and angular velocity.</p>
+            <p><strong>Examples:</strong> Accelerometers, gyroscopes, magnetometers.</p>
+            <p><strong>Applications:</strong> Drone stabilization, robotic balance control.</p>
+            <h4>Gas Sensors:</h4>
+            <p><strong>Function:</strong> Detect the presence of gases.</p>
+            <p><strong>Examples:</strong> Carbon dioxide sensors, methane sensors, smoke detectors.</p>
+            <p><strong>Applications:</strong> Environmental monitoring, safety systems.</p>
+            <h3>Examples of Sensor Usage:</h3>
+            <h4>Ultrasonic Sensor in Obstacle Avoidance:</h4>
+            <pre><code class="python">
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+TRIG = 23
+ECHO = 24
+
+GPIO.setup(TRIG, GPIO.OUT)
+GPIO.setup(ECHO, GPIO.IN)
+
+def get_distance():
+    GPIO.output(TRIG, True)
+    time.sleep(0.00001)
+    GPIO.output(TRIG, False)
+    
+    while GPIO.input(ECHO) == 0:
+        start_time = time.time()
+    
+    while GPIO.input(ECHO) == 1:
+        end_time = time.time()
+    
+    duration = end_time - start_time
+    distance = duration * 17150  # Speed of sound = 34300 cm/s
+    return distance
+
+try:
+    while True:
+        distance = get_distance()
+        print(f'Distance: {distance} cm')
+        time.sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+            </code></pre>
+        </section>
+
+        <section id="section2" class="course-section">
+            <h2>Actuators in Robotics</h2>
+            <p><strong>Definition:</strong> Actuators are devices that convert electrical signals into physical movement. They are the components responsible for moving and controlling a robot’s parts.</p>
+            <h3>Types of Actuators:</h3>
+            <h4>Electric Motors:</h4>
+            <p><strong>Function:</strong> Convert electrical energy into mechanical motion.</p>
+            <p><strong>Examples:</strong> DC motors, servo motors, stepper motors.</p>
+            <p><strong>Applications:</strong> Wheels, robotic arms, conveyors.</p>
+            <h4>Hydraulic Actuators:</h4>
+            <p><strong>Function:</strong> Use fluid pressure to create movement.</p>
+            <p><strong>Examples:</strong> Hydraulic cylinders, hydraulic motors.</p>
+            <p><strong>Applications:</strong> Heavy machinery, industrial robots.</p>
+            <h4>Pneumatic Actuators:</h4>
+            <p><strong>Function:</strong> Use compressed air to create movement.</p>
+            <p><strong>Examples:</strong> Pneumatic cylinders, air muscles.</p>
+            <p><strong>Applications:</strong> Pick-and-place robots, automation systems.</p>
+            <h4>Linear Actuators:</h4>
+            <p><strong>Function:</strong> Create motion in a straight line.</p>
+            <p><strong>Examples:</strong> Screw-driven actuators, belt-driven actuators.</p>
+            <p><strong>Applications:</strong> 3D printers, CNC machines.</p>
+            <h4>Rotary Actuators:</h4>
+            <p><strong>Function:</strong> Create rotational motion.</p>
+            <p><strong>Examples:</strong> Rotary motors, rotary hydraulic actuators.</p>
+            <p><strong>Applications:</strong> Robotic joints, rotary tables.</p>
+            <h3>Examples of Actuator Usage:</h3>
+            <h4>Servo Motor Control:</h4>
+            <pre><code class="python">
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+
+servo = GPIO.PWM(18, 50)  # 50 Hz
+servo.start(0)
+
+def set_angle(angle):
+    duty_cycle = 2 + (angle / 18)
+    GPIO.output(18, True)
+    servo.ChangeDutyCycle(duty_cycle)
+    time.sleep(1)
+    GPIO.output(18, False)
+    servo.ChangeDutyCycle(0)
+
+try:
+    while True:
+        angle = int(input("Enter angle (0-180): "))
+        set_angle(angle)
+except KeyboardInterrupt:
+    servo.stop()
+    GPIO.cleanup()
+            </code></pre>
+        </section>
+
+        <section id="section3" class="course-section">
+            <h2>Integration of Sensors and Actuators</h2>
+            <h3>Control Systems:</h3>
+            <p>Sensors provide feedback to the control system, which processes the data and sends commands to actuators to perform the desired actions.</p>
+            <p><strong>Feedback Loops:</strong> Critical for maintaining desired states (e.g., maintaining a specific speed or position).</p>
+            <h3>Example: Line Following Robot:</h3>
+            <p><strong>Sensors:</strong> Infrared sensors detect the line.</p>
+            <p><strong>Actuators:</strong> Motors adjust the robot’s direction to follow the line.</p>
+            <pre><code class="python">
+import RPi.GPIO as GPIO
+import time
+
+# Motor pins
+motor_left_forward = 17
+motor_left_backward = 18
+motor_right_forward = 22
+motor_right_backward = 23
+
+# Sensor pins
+left_sensor = 24
+right_sensor = 25
+
+# Setup
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(motor_left_forward, GPIO.OUT)
+GPIO.setup(motor_left_backward, GPIO.OUT)
+GPIO.setup(motor_right_forward, GPIO.OUT)
+GPIO.setup(motor_right_backward, GPIO.OUT)
+GPIO.setup(left_sensor, GPIO.IN)
+GPIO.setup(right_sensor, GPIO.IN)
+
+def set_motor_state(left_fwd, left_bwd, right_fwd, right_bwd):
+    GPIO.output(motor_left_forward, left_fwd)
+    GPIO.output(motor_left_backward, left_bwd)
+    GPIO.output(motor_right_forward, right_fwd)
+    GPIO.output(motor_right_backward, right_bwd)
+
+try:
+    while True:
+        left_detected = GPIO.input(left_sensor)
+        right_detected = GPIO.input(right_sensor)
+        
+        if left_detected and right_detected:
+            set_motor_state(True, False, True, False)  # Move forward
+        elif left_detected and not right_detected:
+            set_motor_state(False, True, True, False)  # Turn right
+        elif not left_detected and right_detected:
+            set_motor_state(True, False, False, True)  # Turn left
+        else:
+            set_motor_state(False, False, False, False)  # Stop
+            
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+            </code></pre>
+        </section>
+
+        <section id="section4" class="course-section">
+            <h2>Conclusion</h2>
+            <p>Sensors and actuators are fundamental to robotics, enabling robots to perceive and interact with their environment. Understanding their types, functions, and integration is essential for designing and programming effective robotic systems. By mastering these components, you can create robots capable of performing a wide range of tasks with precision and reliability.</p>
+        </section>
+    </main>
+</body>
+</html>

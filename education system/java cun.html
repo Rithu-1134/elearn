@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurrency in Java</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Concurrency in Java</h1>
+    </header>
+
+    <main>
+        <section id="introduction" class="course-section">
+            <h2>Introduction</h2>
+            <p>Concurrency in Java refers to the ability of a program to run multiple tasks simultaneously, improving performance by utilizing available system resources effectively. Java provides built-in mechanisms and libraries to support concurrent programming, allowing developers to create applications that can perform multiple operations concurrently.</p>
+        </section>
+
+        <section id="key-concepts" class="course-section">
+            <h2>Key Concepts</h2>
+            <h3>Thread</h3>
+            <p>A thread is the smallest unit of execution within a process. Java threads are lightweight processes that share memory and resources of the parent process. Threads can be created by extending the Thread class or implementing the Runnable interface.</p>
+            
+            <h3>Thread States</h3>
+            <ul>
+                <li>New: When a thread is created but not yet started.</li>
+                <li>Runnable: When the thread is ready to run and waiting for CPU time.</li>
+                <li>Blocked: When a thread is waiting for a monitor lock to enter a synchronized block or method.</li>
+                <li>Waiting: When a thread is waiting indefinitely for another thread to perform a particular action.</li>
+                <li>Timed Waiting: When a thread waits for a specified period of time.</li>
+                <li>Terminated: When a thread has completed execution or terminated abnormally.</li>
+            </ul>
+            
+            <h3>Thread Synchronization</h3>
+            <p>Synchronization ensures that only one thread can access a shared resource (like variables or methods) at any given time. This prevents data inconsistency and thread interference.</p>
+
+            <h3>Concurrency Utilities</h3>
+            <p>Java provides several classes and interfaces in the java.util.concurrent package to facilitate concurrent programming:</p>
+            <ul>
+                <li>Executor Framework: Simplifies the execution of tasks asynchronously in a thread pool.</li>
+                <li>Concurrent Collections: Thread-safe collections like ConcurrentHashMap, CopyOnWriteArrayList, etc.</li>
+                <li>Atomic Variables: Provides atomic operations on single variables (AtomicInteger, AtomicBoolean, etc.).</li>
+                <li>CountDownLatch, CyclicBarrier: Synchronization aids for controlling the execution flow of threads.</li>
+            </ul>
+        </section>
+
+        <section id="examples" class="course-section">
+            <h2>Examples of Using Concurrency in Java</h2>
+            <h3>Example 1: Creating and Starting Threads</h3>
+            <pre><code>public class ThreadExample extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+
+    public static void main(String[] args) {
+        ThreadExample thread = new ThreadExample();
+        thread.start(); // Starts the thread
+    }
+}</code></pre>
+
+            <h3>Example 2: Using Runnable Interface</h3>
+            <pre><code>public class RunnableExample implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread is running.");
+    }
+
+    public static void main(String[] args) {
+        Thread thread = new Thread(new RunnableExample());
+        thread.start(); // Starts the thread
+    }
+}</code></pre>
+
+            <h3>Example 3: Synchronized Method</h3>
+            <pre><code>public class SynchronizedCounter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public synchronized int getCount() {
+        return count;
+    }
+
+    public static void main(String[] args) {
+        SynchronizedCounter counter = new SynchronizedCounter();
+
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Final Count: " + counter.getCount()); // Should print 2000
+    }
+}</code></pre>
+        </section>
+
+        <section id="benefits" class="course-section">
+            <h2>Benefits of Concurrency in Java</h2>
+            <ul>
+                <li>Improved Performance: Utilizes multiple CPU cores efficiently, speeding up processing tasks.</li>
+                <li>Enhanced Responsiveness: Allows applications to remain responsive by executing tasks concurrently, such as handling user input while performing background operations.</li>
+                <li>Resource Utilization: Maximizes system resources by executing multiple tasks simultaneously.</li>
+            </ul>
+        </section>
+
+        <section id="challenges" class="course-section">
+            <h2>Challenges of Concurrency</h2>
+            <ul>
+                <li>Thread Safety: Ensuring data consistency and avoiding race conditions.</li>
+                <li>Deadlocks: Situations where two or more threads are blocked forever, waiting for each other to release resources.</li>
+                <li>Complexity: Concurrent programming adds complexity to the application design and debugging process.</li>
+            </ul>
+        </section>
+
+        <section id="conclusion" class="course-section">
+            <h2>Conclusion</h2>
+            <p>Concurrency in Java is essential for developing efficient, responsive, and scalable applications. Understanding the principles of threading, synchronization, and Java's concurrency utilities is crucial for leveraging the full potential of concurrent programming.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

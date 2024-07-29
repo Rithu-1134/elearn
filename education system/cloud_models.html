@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Server Models</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Cloud Server Models</h1>
+    </header>
+
+    <main>
+        <section id="section1" class="course-section">
+            <h2>1. Public Cloud</h2>
+            <p><strong>Description:</strong><br>
+            In the public cloud model, services are delivered over the internet and shared across multiple organizations. The cloud service provider owns and operates the infrastructure, including servers, storage, and networking equipment.</p>
+
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li>Multi-Tenant Architecture: Resources are shared among multiple customers. Each customer's data and applications are isolated from others.</li>
+                <li>Scalability: Easily scale resources up or down based on demand.</li>
+                <li>Cost-Efficiency: Typically follows a pay-as-you-go pricing model, where customers pay only for the resources they use.</li>
+                <li>Maintenance-Free: The cloud provider manages and maintains the infrastructure, including updates and security patches.</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>Amazon Web Services (AWS): Offers a wide range of services, including computing power, storage, and databases.</li>
+                <li>Microsoft Azure: Provides services for computing, analytics, storage, and networking.</li>
+                <li>Google Cloud Platform (GCP): Includes services for computing, data storage, machine learning, and more.</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Startups and small businesses that need scalable resources without significant upfront investment.</li>
+                <li>Applications with variable workloads or unpredictable usage patterns.</li>
+            </ul>
+        </section>
+
+        <section id="section2" class="course-section">
+            <h2>2. Private Cloud</h2>
+            <p><strong>Description:</strong><br>
+            The private cloud model involves cloud services being maintained on a private network and used exclusively by a single organization. It can be hosted on-premises or by a third-party provider.</p>
+
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li>Single-Tenant Architecture: Resources are dedicated to a single organization, providing enhanced control and security.</li>
+                <li>Customization: Organizations can customize the cloud environment to meet specific needs and compliance requirements.</li>
+                <li>Control: Greater control over infrastructure, security, and data management.</li>
+                <li>Cost: Higher upfront and ongoing costs compared to public cloud, as the organization bears the expense of hardware and maintenance.</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>VMware Cloud Foundation: Provides an integrated software-defined data center (SDDC) for private cloud deployments.</li>
+                <li>OpenStack: An open-source platform for building private clouds.</li>
+                <li>Microsoft Azure Stack: An extension of Azure that brings cloud services to on-premises environments.</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Organizations with strict data privacy and regulatory requirements.</li>
+                <li>Businesses needing customized solutions that are not feasible in a public cloud environment.</li>
+            </ul>
+        </section>
+
+        <section id="section3" class="course-section">
+            <h2>3. Hybrid Cloud</h2>
+            <p><strong>Description:</strong><br>
+            The hybrid cloud model combines public and private clouds, allowing data and applications to be shared between them. This model offers flexibility and optimized resource utilization.</p>
+
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li>Integration: Seamlessly integrates public and private cloud environments, enabling data and applications to move between them.</li>
+                <li>Flexibility: Allows organizations to use public cloud resources for non-sensitive workloads and private cloud for critical applications and data.</li>
+                <li>Cost Optimization: Balances cost and performance by leveraging public cloud resources for scalability while maintaining sensitive data in a private cloud.</li>
+                <li>Complexity: Requires careful management and coordination between different cloud environments.</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>Microsoft Azure Arc: Extends Azure management and services to on-premises, multi-cloud, and edge environments.</li>
+                <li>AWS Outposts: Brings AWS services and infrastructure on-premises to support hybrid deployments.</li>
+                <li>Google Anthos: Manages and deploys applications across multiple clouds and on-premises environments.</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Businesses with a mix of sensitive and non-sensitive data.</li>
+                <li>Organizations looking to migrate to the cloud gradually while maintaining some on-premises infrastructure.</li>
+            </ul>
+        </section>
+
+        <section id="section4" class="course-section">
+            <h2>4. Community Cloud</h2>
+            <p><strong>Description:</strong><br>
+            The community cloud model involves sharing cloud infrastructure among several organizations with similar interests or requirements, such as security, compliance, or regulatory concerns.</p>
+
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li>Shared Infrastructure: Resources are shared among a specific community of organizations.</li>
+                <li>Cost Sharing: Costs are distributed among the community members, making it more affordable than a private cloud.</li>
+                <li>Collaboration: Enables collaboration and data sharing among organizations with similar needs.</li>
+                <li>Governance: Managed either by the community members themselves or by a third-party provider.</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>Government Cloud: A community cloud specifically designed for government agencies to share infrastructure and services.</li>
+                <li>Healthcare Cloud: A cloud environment shared by healthcare organizations to comply with regulations and share data securely.</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Organizations in the same industry with common compliance and security requirements.</li>
+                <li>Collaborative projects involving multiple organizations with shared interests.</li>
+            </ul>
+        </section>
+
+        <section id="section5" class="course-section">
+            <h2>Choosing the Right Cloud Server Model</h2>
+            <p>Selecting the appropriate cloud server model depends on several factors, including:</p>
+            <ul>
+                <li><strong>Security and Compliance:</strong> Determine the level of control and security required for your data and applications.</li>
+                <li><strong>Cost Considerations:</strong> Evaluate the cost implications of each model, including both initial and ongoing expenses.</li>
+                <li><strong>Scalability Needs:</strong> Assess how your resource needs might change over time and how each model supports scaling.</li>
+                <li><strong>Performance Requirements:</strong> Consider the performance needs of your applications and how each model meets those requirements.</li>
+                <li><strong>Integration and Management:</strong> Evaluate how well the cloud model integrates with existing systems and how manageable it is.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have gone through all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Go Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript code to handle navigation
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

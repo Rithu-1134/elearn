@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Course - E-LearnX</title>
+    <link rel="icon" href="image/logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <h1>E-LearnX</h1>
+        </div>
+        <div class="nav-title">
+            <h1>Web Development Course</h1>
+        </div>
+    </nav>
+
+    <div class="image-container">
+        <img src="image/web.jpg" alt="Web Development Image" class="center-image">
+    </div>
+
+    <div class="course-details">
+        <h2>Course Duration: 12 Weeks</h2>
+        <h3>Learning Objectives:</h3>
+        <ul>
+            <li>Understand the fundamentals of web development.</li>
+            <li>Learn to build responsive and dynamic websites.</li>
+            <li>Gain hands-on experience with front-end and back-end technologies.</li>
+        </ul>
+        <button id="ready-btn">Ready</button>
+    </div>
+
+    <div id="course-materials" class="hidden">
+        <h3>Course Materials</h3>
+        <ul>
+            <li><a href="web_intro.html">Introduction to Web Development</a></li>
+            <li><a href="web_html_css.html">HTML and CSS Basics</a></li>
+            <li><a href="web_js.html">JavaScript and DOM Manipulation</a></li>
+            <li><a href="web_backend.html">Backend Development with Node.js</a></li>
+            <li><a href="web_fullstack.html">Full-Stack Development</a></li>
+        </ul>
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Web Docs - Learn Web Development</a></li>
+            <li><a href="https://www.w3schools.com/">W3Schools - Web Development Tutorials</a></li>
+            <li><a href="https://www.coursera.org/specializations/web-design">Coursera - Web Design for Everybody</a></li>
+        </ul>
+        <label>
+            <input type="checkbox" id="completion-checkbox"> I have completed the course
+        </label>
+        <p id="completion-message" class="hidden">Congratulations! You have successfully completed the course. You're on the right path!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

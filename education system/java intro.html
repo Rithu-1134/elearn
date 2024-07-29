@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Java</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to Java</h1>
+    </header>
+
+    <main>
+        <section id="definition" class="course-section">
+            <h2>Definition and Overview</h2>
+            <p>Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.</p>
+        </section>
+
+        <section id="history" class="course-section">
+            <h2>History of Java</h2>
+            <p>Java was originally developed by James Gosling at Sun Microsystems (which has since been acquired by Oracle) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.</p>
+        </section>
+
+        <section id="features" class="course-section">
+            <h2>Key Features of Java</h2>
+            <ul>
+                <li><strong>Platform Independence:</strong> Java code is compiled into bytecode that can be run on any device with a Java Virtual Machine (JVM).</li>
+                <li><strong>Object-Oriented:</strong> Everything in Java is treated as an object, promoting code reuse and modular structure.</li>
+                <li><strong>Simple and Familiar:</strong> Java is designed to be easy to use and accessible, with a syntax that is clean and understandable.</li>
+                <li><strong>Robust and Secure:</strong> Java emphasizes early checking for possible errors and runtime checking, making it more robust. It also provides a secure platform for developing applications with built-in security features.</li>
+                <li><strong>Multithreaded:</strong> Java has built-in support for multithreaded programming, which allows you to build applications that can perform multiple tasks simultaneously.</li>
+                <li><strong>High Performance:</strong> The use of Just-In-Time (JIT) compilers allows Java applications to perform at an almost native level.</li>
+                <li><strong>Distributed Computing:</strong> Java has a comprehensive set of APIs that makes it easy to work with resources across a network.</li>
+            </ul>
+        </section>
+
+        <section id="architecture" class="course-section">
+            <h2>Java Architecture</h2>
+            <ul>
+                <li><strong>Java Development Kit (JDK):</strong> A software development environment used for developing Java applications and applets.</li>
+                <li><strong>Java Runtime Environment (JRE):</strong> Provides the libraries, Java Virtual Machine (JVM), and other components to run applications written in Java.</li>
+                <li><strong>Java Virtual Machine (JVM):</strong> An abstract machine that enables your computer to run a Java program. It converts Java bytecode into machine language and executes it.</li>
+            </ul>
+        </section>
+
+        <section id="syntax" class="course-section">
+            <h2>Basic Syntax of Java</h2>
+            <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+            <h3>Data Types:</h3>
+            <ul>
+                <li><strong>Primitive Data Types:</strong> byte, short, int, long, float, double, boolean, char</li>
+                <li><strong>Non-Primitive Data Types:</strong> Strings, Arrays, Classes, Interfaces</li>
+            </ul>
+            <h3>Control Flow Statements:</h3>
+            <ul>
+                <li><strong>Conditional Statements:</strong> if, if-else, switch</li>
+                <li><strong>Looping Statements:</strong> for, while, do-while</li>
+                <li><strong>Jump Statements:</strong> break, continue, return</li>
+            </ul>
+        </section>
+
+        <section id="oop" class="course-section">
+            <h2>Object-Oriented Programming in Java</h2>
+            <ul>
+                <li><strong>Classes and Objects:</strong> Class: A blueprint for objects; Object: An instance of a class</li>
+                <li><strong>Inheritance:</strong> Allows one class to inherit the fields and methods of another.</li>
+                <li><strong>Polymorphism:</strong> Allows one interface to be used for a general class of actions.</li>
+                <li><strong>Encapsulation:</strong> Wrapping the data (variables) and code (methods) together as a single unit.</li>
+                <li><strong>Abstraction:</strong> Hiding the internal implementation details and showing only the functionality.</li>
+            </ul>
+        </section>
+
+        <section id="libraries" class="course-section">
+            <h2>Commonly Used Libraries and Frameworks</h2>
+            <ul>
+                <li><strong>Java Standard Library:</strong> Collections Framework, java.util, java.io, java.net</li>
+                <li><strong>Popular Frameworks:</strong>
+                    <ul>
+                        <li>Spring: A comprehensive framework for enterprise applications.</li>
+                        <li>Hibernate: An ORM framework for database operations.</li>
+                        <li>Apache Struts: For building web applications.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="applications" class="course-section">
+            <h2>Applications of Java</h2>
+            <ul>
+                <li><strong>Web Applications:</strong> Java is extensively used to create web applications.</li>
+                <li><strong>Mobile Applications:</strong> Android, which is based on Java, is the most popular mobile OS.</li>
+                <li><strong>Enterprise Applications:</strong> Java is the backbone for many large-scale enterprise applications.</li>
+                <li><strong>Scientific Applications:</strong> Java is used in scientific applications, especially in natural language processing.</li>
+            </ul>
+        </section>
+
+        <section id="conclusion" class="course-section">
+            <h2>Conclusion</h2>
+            <p>Java continues to be one of the most popular programming languages due to its versatility, efficiency, platform independence, and wide range of libraries and frameworks. Whether you are building web applications, mobile applications, or enterprise solutions, Java provides a robust and secure platform for all your development needs.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'java.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

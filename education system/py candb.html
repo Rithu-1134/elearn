@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Python and Control Flow</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Basics of Python and Control Flow</h1>
+    </header>
+
+    <main>
+        <section id="introduction" class="course-section">
+            <h2>Introduction to Python</h2>
+            <p>Python is a versatile and beginner-friendly programming language known for its simplicity and readability. In this guide, we will delve into the fundamental concepts of Python, including variables, data types, operators, control flow statements, functions, and more.</p>
+        </section>
+
+        <section id="installing-python" class="course-section">
+            <h2>Installing Python</h2>
+            <p>To start programming in Python, you need to install the Python interpreter from the official website (https://www.python.org/). Python is available for all major operating systems (Windows, macOS, Linux).</p>
+        </section>
+
+        <section id="variables-and-data-types" class="course-section">
+            <h2>Variables and Data Types</h2>
+            <h3>Variables</h3>
+            <p>Variables are used to store data values. In Python, variables are created when you assign a value to them. Python is dynamically typed, meaning you don't need to declare the type of a variable explicitly.</p>
+
+            <h3>Data Types</h3>
+            <p>Python supports various built-in data types:</p>
+            <ul>
+                <li>Numeric Types: int, float, complex</li>
+                <li>Sequence Types: str (string), list, tuple</li>
+                <li>Mapping Type: dict (dictionary)</li>
+                <li>Boolean Type: bool (True/False)</li>
+                <li>Set Types: set, frozenset</li>
+            </ul>
+        </section>
+
+        <section id="operators" class="course-section">
+            <h2>Operators</h2>
+            <h3>Arithmetic Operators</h3>
+            <p>Arithmetic operators in Python:</p>
+            <pre><code># Arithmetic operators in Python
+a = 10
+b = 3
+
+print(a + b)  # Addition
+print(a - b)  # Subtraction
+print(a * b)  # Multiplication
+print(a / b)  # Division (float)
+print(a // b)  # Floor division (integer division)
+print(a % b)  # Modulus (remainder)
+print(a ** b)  # Exponentiation
+</code></pre>
+
+            <h3>Comparison Operators</h3>
+            <p>Comparison operators in Python:</p>
+            <pre><code># Comparison operators in Python
+x = 5
+y = 8
+
+print(x > y)  # Greater than
+print(x < y)  # Less than
+print(x == y)  # Equal to
+print(x != y)  # Not equal to
+print(x >= y)  # Greater than or equal to
+print(x <= y)  # Less than or equal to
+</code></pre>
+
+            <h3>Logical Operators</h3>
+            <p>Logical operators in Python:</p>
+            <pre><code># Logical operators in Python
+a = True
+b = False
+
+print(a and b)  # Logical AND
+print(a or b)  # Logical OR
+print(not a)  # Logical NOT
+</code></pre>
+        </section>
+
+        <section id="control-flow-statements" class="course-section">
+            <h2>Control Flow Statements</h2>
+            <h3>Conditional Statements (if-elif-else)</h3>
+            <p>Conditional statements allow you to execute different blocks of code based on the evaluation of conditions.</p>
+            <pre><code># Example of conditional statements in Python
+age = 18
+
+if age >= 18:
+    print("You are an adult.")
+elif age >= 13:
+    print("You are a teenager.")
+else:
+    print("You are a child.")
+</code></pre>
+
+            <h3>Loops (for and while)</h3>
+            <p>Loops are used to iterate over a sequence of elements or execute a block of code repeatedly.</p>
+            <pre><code># Example of for loop in Python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+# Example of while loop in Python
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+</code></pre>
+
+            <h3>Loop Control Statements (break, continue, pass)</h3>
+            <p>Loop control statements in Python:</p>
+            <pre><code># Example of loop control statements in Python
+for i in range(10):
+    if i == 3:
+        continue  # Skip current iteration
+    if i == 7:
+        break  # Exit loop
+    print(i)
+</code></pre>
+
+            <h3>Exception Handling (try-except-finally)</h3>
+            <p>Exception handling allows you to gracefully manage errors and unexpected behaviors in your code.</p>
+            <pre><code># Example of exception handling in Python
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+finally:
+    print("Execution completed.")
+</code></pre>
+        </section>
+
+        <section id="functions" class="course-section">
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform a specific task. They improve code modularity and maintainability.</p>
+            <pre><code># Example of a function in Python
+def greet(name):
+    """
+    This function greets the user.
+    """
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Output: Hello, Alice!
+</code></pre>
+        </section>
+
+        <section id="modules-and-packages" class="course-section">
+            <h2>Modules and Packages</h2>
+            <p>Modules are files containing Python code, while packages are directories of modules. They help organize code into smaller, reusable units.</p>
+            <pre><code># Example of importing a module in Python
+import math
+
+print(math.sqrt(25))  # Output: 5.0
+</code></pre>
+        </section>
+
+        <section id="file-handling" class="course-section">
+            <h2>File Handling</h2>
+            <p>File handling operations allow you to read from and write to files on disk.</p>
+            <pre><code># Example of file handling in Python
+with open("example.txt", "r") as file:
+    contents = file.read()
+    print(contents)
+</code></pre>
+        </section>
+
+        <section id="conclusion" class="course-section">
+            <h2>Conclusion</h2>
+            <p>Python's simplicity and versatility make it a popular choice for beginners and experienced programmers alike. This guide has covered the basics of Python, including variables, data types, operators, control flow statements, functions, and more. With this foundation, you can explore advanced topics such as object-oriented programming, GUI development, web development, and data science using Python. Happy coding!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

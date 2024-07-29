@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Neural Networks</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to Neural Networks</h1>
+    </header>
+
+    <main>
+        <section id="section1" class="course-section">
+            <h2>Definition and Basics</h2>
+            <p><strong>Neural Networks:</strong> A set of algorithms designed to recognize patterns in data.</p>
+            <p><strong>Neurons, Layers, and Activation Functions:</strong> Neurons are basic units, layers organize them, and activation functions introduce non-linearity.</p>
+        </section>
+
+        <section id="section2" class="course-section">
+            <h2>Types of Neural Networks</h2>
+            <p><strong>Feedforward Neural Networks (FNN):</strong> Data flows from input to output.</p>
+            <p><strong>Recurrent Neural Networks (RNN):</strong> Handles sequential data with loops.</p>
+            <p><strong>Convolutional Neural Networks (CNN):</strong> Used for image and video recognition.</p>
+            <p><strong>Generative Adversarial Networks (GANs):</strong> Creates new data instances resembling training data.</p>
+        </section>
+
+        <section id="section3" class="course-section">
+            <h2>Neural Network Components</h2>
+            <p><strong>Layers and Architecture:</strong> Input, Hidden (with adjustable weights), and Output layers.</p>
+            <p><strong>Activation Functions:</strong> Sigmoid, tanh, ReLU, and softmax for introducing non-linearity.</p>
+        </section>
+
+        <section id="section4" class="course-section">
+            <h2>Training Neural Networks</h2>
+            <p><strong>Forward Propagation:</strong> Data flow during prediction.</p>
+            <p><strong>Backpropagation:</strong> Adjusts weights to minimize prediction errors.</p>
+            <p><strong>Optimization Algorithms:</strong> Gradient descent and variants like Adam optimizer.</p>
+        </section>
+
+        <section id="section5" class="course-section">
+            <h2>Applications of Neural Networks</h2>
+            <p><strong>Image and Video Recognition:</strong> CNNs for object detection, facial recognition.</p>
+            <p><strong>Natural Language Processing (NLP):</strong> RNNs for sentiment analysis, language translation.</p>
+            <p><strong>Reinforcement Learning:</strong> Using NNs to train agents based on rewards and penalties.</p>
+        </section>
+
+        <section id="section6" class="course-section">
+            <h2>Challenges and Considerations</h2>
+            <p><strong>Overfitting and Underfitting:</strong> Balancing model complexity.</p>
+            <p><strong>Computational Complexity:</strong> Resources for training deep architectures.</p>
+            <p><strong>Ethical Considerations:</strong> Addressing biases and ethical implications.</p>
+        </section>
+
+        <section id="section7" class="course-section">
+            <h2>Conclusion</h2>
+            <p><strong>Importance of Neural Networks:</strong> Versatility in AI applications.</p>
+            <p><strong>Ongoing Research:</strong> Future directions in neural network research.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have gone through all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Go Back to AI Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript code to handle navigation
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'AI.html'; // Replace with your main AI page URL
+        });
+    </script>
+</body>
+</html>

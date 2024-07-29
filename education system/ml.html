@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Machine Learning</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Basics of Machine Learning</h1>
+    </header>
+
+    <main>
+        <section id="section1" class="course-section">
+            <h2>1. Machine Learning Definition</h2>
+            <p>Machine learning (ML) is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing algorithms that can automatically learn from and make predictions or decisions based on data.</p>
+        </section>
+
+        <section id="section2" class="course-section">
+            <h2>2. Key Concepts in Machine Learning</h2>
+            <h3>Supervised Learning</h3>
+            <p>Supervised learning involves training a model on labeled data, where the algorithm learns to map inputs to outputs based on example input-output pairs.</p>
+            <ul>
+                <li>Regression: Predicting continuous outputs (e.g., predicting house prices).</li>
+                <li>Classification: Predicting discrete outputs (e.g., spam detection).</li>
+            </ul>
+
+            <h3>Unsupervised Learning</h3>
+            <p>Unsupervised learning involves training a model on unlabeled data, where the algorithm learns patterns and structures within the data.</p>
+            <ul>
+                <li>Clustering: Grouping similar data points together (e.g., customer segmentation).</li>
+                <li>Dimensionality Reduction: Reducing the number of features in data (e.g., principal component analysis).</li>
+            </ul>
+
+            <h3>Reinforcement Learning</h3>
+            <p>Reinforcement learning involves an agent learning to make decisions in an environment to maximize cumulative reward. It learns through trial and error, receiving feedback in the form of rewards or penalties.</p>
+            <ul>
+                <li>Agents: Autonomous systems that interact with an environment.</li>
+                <li>Reward Function: Defines the goal or performance measure for the agent.</li>
+            </ul>
+        </section>
+
+        <section id="section3" class="course-section">
+            <h2>3. Machine Learning Workflow</h2>
+            <ol>
+                <li>Data Collection: Gathering relevant data from various sources.</li>
+                <li>Data Preprocessing: Cleaning, transforming, and preparing data for ML algorithms.</li>
+                <li>Model Selection and Training: Choosing and training appropriate ML algorithms.</li>
+                <li>Evaluation: Assessing model performance using metrics.</li>
+                <li>Hyperparameter Tuning: Optimizing model performance.</li>
+                <li>Deployment and Monitoring: Implementing and monitoring the model in production.</li>
+            </ol>
+        </section>
+
+        <section id="section4" class="course-section">
+            <h2>4. Algorithms and Techniques</h2>
+            <h3>Regression Algorithms</h3>
+            <ul>
+                <li>Linear Regression: Predicts continuous values based on linear relationships between variables.</li>
+                <li>Support Vector Regression (SVR): Extensions of SVMs for regression tasks.</li>
+            </ul>
+
+            <h3>Classification Algorithms</h3>
+            <ul>
+                <li>Logistic Regression: Predicts binary outcomes using a logistic function.</li>
+                <li>Decision Trees: Hierarchical structures for decision-making based on feature values.</li>
+            </ul>
+
+            <h3>Clustering Algorithms</h3>
+            <ul>
+                <li>K-means Clustering: Divides data points into clusters based on similarity.</li>
+                <li>Hierarchical Clustering: Builds a hierarchy of clusters.</li>
+            </ul>
+
+            <h3>Neural Networks and Deep Learning</h3>
+            <ul>
+                <li>Artificial Neural Networks (ANNs): Biologically inspired models consisting of interconnected layers of nodes (neurons).</li>
+                <li>Deep Learning: ANNs with multiple layers capable of learning intricate patterns from data.</li>
+            </ul>
+        </section>
+
+        <section id="section5" class="course-section">
+            <h2>5. Applications of Machine Learning</h2>
+            <ul>
+                <li>Natural Language Processing (NLP): Text classification, sentiment analysis.</li>
+                <li>Computer Vision: Image recognition, object detection.</li>
+                <li>Healthcare: Disease diagnosis, personalized treatment planning.</li>
+                <li>Finance: Fraud detection, stock market prediction.</li>
+                <li>Recommendation Systems: Personalized content recommendations.</li>
+            </ul>
+        </section>
+
+        <section id="section6" class="course-section">
+            <h2>6. Challenges and Considerations</h2>
+            <ul>
+                <li>Overfitting and Underfitting: Balancing model complexity.</li>
+                <li>Bias and Fairness: Mitigating biases in data and algorithms.</li>
+                <li>Interpretability: Understanding and explaining model predictions.</li>
+                <li>Scalability: Handling large datasets and computational resources.</li>
+            </ul>
+        </section>
+
+        <section id="section7" class="course-section">
+            <h2>7. Conclusion</h2>
+            <p>Machine learning drives innovation across industries, enabling automation, efficiency, and new insights from data. Understanding these basics is crucial for leveraging ML effectively in solving real-world problems and advancing AI capabilities.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have gone through all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Go Back to AI Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript code to handle navigation
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'AI.html'; // Replace with your main AI page URL
+        });
+    </script>
+</body>
+</html>

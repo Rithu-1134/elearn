@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming in Java</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Object-Oriented Programming in Java</h1>
+    </header>
+
+    <main>
+        <section id="introduction" class="course-section">
+            <h2>Introduction</h2>
+            <p>Object-Oriented Programming (OOP) is a programming paradigm that uses "objects" to design applications and computer programs. It uses several principles including inheritance, polymorphism, encapsulation, and abstraction. Java is a popular OOP language that helps in organizing complex programs.</p>
+        </section>
+
+        <section id="key-concepts" class="course-section">
+            <h2>Key Concepts of OOP in Java</h2>
+            <h3>1. Classes and Objects</h3>
+            <p><strong>Class:</strong> A class is a blueprint for creating objects. It defines a datatype by bundling data and methods that work on the data into one single unit.</p>
+            <p><strong>Object:</strong> An object is an instance of a class. When a class is defined, no memory is allocated until an object of that class is created.</p>
+            <p><strong>Example:</strong></p>
+            <p>A class named Animal could be created, and an object dog can be instantiated from this class.</p>
+
+            <h3>2. Inheritance</h3>
+            <p>Inheritance is a mechanism where one class acquires the properties (fields) and behaviors (methods) of another class. The class that inherits is called the subclass or derived class, and the class being inherited from is the superclass or base class.</p>
+            <p><strong>Example:</strong></p>
+            <p>If Animal is a class, Dog can be a subclass of Animal and inherit its properties and methods.</p>
+
+            <h3>3. Polymorphism</h3>
+            <p>Polymorphism allows methods to do different things based on the object it is acting upon. It is the ability of a variable, function, or object to take on multiple forms.</p>
+            <p><strong>Example:</strong></p>
+            <p>A method named makeSound() could be implemented in multiple classes such as Dog, Cat, each giving a different sound.</p>
+
+            <h3>4. Encapsulation</h3>
+            <p>Encapsulation is the technique of making the fields in a class private and providing access to the fields via public methods. It helps protect the internal state of an object and hide the details of how an object works from the outside world.</p>
+            <p><strong>Example:</strong></p>
+            <p>Private variables in a class Person can only be accessed or modified through public methods like getName() or setName().</p>
+
+            <h3>5. Abstraction</h3>
+            <p>Abstraction is the concept of hiding the complex implementation details and showing only the essential features of the object. It helps in reducing programming complexity and effort.</p>
+            <p><strong>Example:</strong></p>
+            <p>A Car class might expose methods like drive() and brake() while hiding the complex logic of engine management and transmission.</p>
+        </section>
+
+        <section id="examples" class="course-section">
+            <h2>Examples</h2>
+            <h3>Class and Object Example</h3>
+            <p>A simple example demonstrating class and object:</p>
+            <pre><code>public class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}</code></pre>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Animal();
+        dog.eat();
+    }
+}</code></pre>
+
+            <h3>Inheritance Example</h3>
+            <p>An example demonstrating inheritance:</p>
+            <p><strong>Superclass:</strong></p>
+            <pre><code>public class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}</code></pre>
+            <p><strong>Subclass:</strong></p>
+            <pre><code>public class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}</code></pre>
+            <p><strong>Usage:</strong></p>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat(); // Inherited method
+        dog.bark(); // Subclass method
+    }
+}</code></pre>
+
+            <h3>Polymorphism Example</h3>
+            <p>An example of polymorphism using method overriding:</p>
+            <p><strong>Superclass:</strong></p>
+            <pre><code>public class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}</code></pre>
+            <p><strong>Subclass:</strong></p>
+            <pre><code>public class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}</code></pre>
+            <p><strong>Usage:</strong></p>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Dog barks
+    }
+}</code></pre>
+        </section>
+
+        <section id="conclusion" class="course-section">
+            <h2>Conclusion</h2>
+            <p>Object-Oriented Programming in Java provides a clear modular structure for programs, making it easier to manage large software projects. By understanding and applying the core principles of OOP—classes and objects, inheritance, polymorphism, encapsulation, and abstraction—you can write more flexible, scalable, and maintainable code.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

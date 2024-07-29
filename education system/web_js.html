@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java and DOM Manipulation</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Java and DOM Manipulation</h1>
+        <nav>
+            <ul>
+                <li><a href="#java-introduction">Introduction to Java</a></li>
+                <li><a href="#dom-introduction">Introduction to DOM Manipulation</a></li>
+                <li><a href="#java-web-technologies">Java and Web Technologies</a></li>
+                <li><a href="#integrating-java-js">Integrating Java with JavaScript</a></li>
+                <li><a href="#summary">Summary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="java-introduction">
+            <h2>1. Introduction to Java</h2>
+            <h3>What is Java?</h3>
+            <p><strong>Definition:</strong> Java is a high-level, object-oriented programming language designed to be platform-independent. It is widely used for building enterprise-scale applications, web applications, and Android apps.</p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Object-Oriented:</strong> Encourages modular programming with classes and objects.</li>
+                <li><strong>Platform-Independent:</strong> Java programs run on any device with a Java Virtual Machine (JVM).</li>
+                <li><strong>Strongly Typed:</strong> Requires explicit declarations of data types.</li>
+                <li><strong>Automatic Memory Management:</strong> Uses garbage collection to manage memory.</li>
+            </ul>
+            <h3>Basic Java Syntax</h3>
+            <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+
+            <h3>Java Data Types</h3>
+            <h4>Primitive Data Types:</h4>
+            <pre><code>int, float, double, char, boolean</code></pre>
+            <h4>Non-Primitive Data Types:</h4>
+            <pre><code>String, Arrays, Classes, Interfaces</code></pre>
+
+            <h3>Control Flow Statements</h3>
+            <h4>Conditional Statements:</h4>
+            <pre><code>if (condition) {
+    // code
+} else if (anotherCondition) {
+    // code
+} else {
+    // code
+}</code></pre>
+
+            <h4>Loops:</h4>
+            <pre><code>for (int i = 0; i &lt; 10; i++) {
+    // code
+}
+
+while (condition) {
+    // code
+}
+
+do {
+    // code
+} while (condition);</code></pre>
+
+            <h3>Functions and Methods</h3>
+            <pre><code>public class MathOperations {
+    public int add(int a, int b) {
+        return a + b;
+    }
+}</code></pre>
+        </section>
+
+        <section id="dom-introduction">
+            <h2>2. Introduction to DOM Manipulation</h2>
+            <h3>What is the DOM?</h3>
+            <p><strong>Definition:</strong> The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing scripts to dynamically access and update the content, structure, and style of documents.</p>
+
+            <h3>JavaScript and DOM Manipulation</h3>
+            <h4>Selecting Elements:</h4>
+            <pre><code>var element = document.getElementById('elementId');
+var elements = document.getElementsByClassName('className');
+var queryElement = document.querySelector('.className');</code></pre>
+
+            <h4>Modifying Content:</h4>
+            <pre><code>element.innerHTML = 'New Content';
+element.textContent = 'New Text Content';</code></pre>
+
+            <h4>Changing Attributes:</h4>
+            <pre><code>element.setAttribute('attributeName', 'value');</code></pre>
+
+            <h4>Styling Elements:</h4>
+            <pre><code>element.style.color = 'blue';
+element.style.backgroundColor = 'yellow';</code></pre>
+
+            <h4>Creating and Appending Elements:</h4>
+            <pre><code>var newElement = document.createElement('div');
+newElement.textContent = 'Hello, World!';
+document.body.appendChild(newElement);</code></pre>
+
+            <h4>Event Handling:</h4>
+            <pre><code>element.addEventListener('click', function() {
+    alert('Element clicked!');
+});</code></pre>
+        </section>
+
+        <section id="java-web-technologies">
+            <h2>3. Java and Web Technologies</h2>
+            <h3>Java Servlet Example</h3>
+            <p>Servlets are Java programs that run on a web server and generate dynamic web content.</p>
+            <pre><code>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class HelloServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+        throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("&lt;html&gt;&lt;body&gt;");
+        out.println("&lt;h1&gt;Hello from Servlet!&lt;/h1&gt;");
+        out.println("&lt;script&gt;document.body.style.backgroundColor = 'lightblue';&lt;/script&gt;");
+        out.println("&lt;/body&gt;&lt;/html&gt;");
+    }
+}</code></pre>
+
+            <h3>JavaServer Pages (JSP) Example</h3>
+            <p>JSP is a technology that allows embedding Java code in HTML pages to create dynamic web content.</p>
+            <pre><code>&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JSP Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello from JSP!&lt;/h1&gt;
+    &lt;script&gt;
+        document.body.style.backgroundColor = 'lightgreen';
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h3>Java with Front-End Frameworks</h3>
+            <h4>Spring Boot + Thymeleaf:</h4>
+            <p>Thymeleaf is a server-side template engine used with Spring Boot to generate HTML content dynamically.</p>
+            <pre><code>&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;body&gt;
+    &lt;h1 th:text="'Hello, ' + ${name}"&gt;&lt;/h1&gt;
+    &lt;button onclick="alert('Button clicked!')"&gt;Click Me&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="integrating-java-js">
+            <h2>4. Integrating Java with JavaScript</h2>
+            <h3>Passing Data from Java to JavaScript</h3>
+            <h4>Using JSP:</h4>
+            <pre><code>&lt;script&gt;
+    var userName = "${userName}"; // Java variable passed to JavaScript
+    console.log("User Name: " + userName);
+&lt;/script&gt;</code></pre>
+
+            <h3>Handling JavaScript Events in Java</h3>
+            <h4>AJAX Calls:</h4>
+            <pre><code>fetch('/api/data')
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+        console.log(data);
+    });</code></pre>
+        </section>
+
+        <section id="summary">
+            <h2>5. Summary</h2>
+            <p>This module has covered:</p>
+            <ul>
+                <li><strong>Java Basics:</strong> Syntax, data types, control flow, and functions.</li>
+                <li><strong>DOM Manipulation:</strong> Basic concepts, JavaScript methods for interacting with the DOM.</li>
+                <li><strong>Java with Web Technologies:</strong> Using Java with servlets, JSP, and integrating with JavaScript for dynamic web content.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My E-LearnX Platform</p>
+    </footer>
+</body>
+</html>

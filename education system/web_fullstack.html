@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Development Course</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Full-Stack Development Course</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#frontend">Frontend Development</a></li>
+                <li><a href="#backend">Backend Development</a></li>
+                <li><a href="#database">Database Management</a></li>
+                <li><a href="#integration">Full-Stack Integration</a></li>
+                <li><a href="#project">Project Work</a></li>
+                <li><a href="#summary">Summary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>1. Introduction to Full-Stack Development</h2>
+            <h3>What is Full-Stack Development?</h3>
+            <p><strong>Definition:</strong> Full-stack development involves working on both the frontend and backend aspects of a web application. Full-stack developers handle the client-side, server-side, and databases, creating a seamless user experience.</p>
+            <h3>Components:</h3>
+            <ul>
+                <li><strong>Frontend:</strong> The part of the application that users interact with directly.</li>
+                <li><strong>Backend:</strong> The server-side logic and database interactions.</li>
+                <li><strong>Database:</strong> Stores and manages data used by the application.</li>
+            </ul>
+            <h3>Skills Required</h3>
+            <ul>
+                <li><strong>Frontend Technologies:</strong> HTML, CSS, JavaScript, and frontend frameworks (e.g., React, Angular, Vue).</li>
+                <li><strong>Backend Technologies:</strong> Server-side languages (e.g., Node.js, Python, Java), web frameworks (e.g., Express, Django, Spring Boot).</li>
+                <li><strong>Database Technologies:</strong> SQL (e.g., MySQL, PostgreSQL) and NoSQL (e.g., MongoDB).</li>
+                <li><strong>Version Control:</strong> Git and GitHub for managing code changes and collaboration.</li>
+            </ul>
+        </section>
+
+        <section id="frontend">
+            <h2>2. Frontend Development</h2>
+            <h3>2.1 HTML Basics</h3>
+            <h4>Structure of HTML Documents:</h4>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+    &lt;p&gt;Paragraph text.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <h4>Common HTML Elements:</h4>
+            <ul>
+                <li>Headings: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+                <li>Paragraphs: <code>&lt;p&gt;</code></li>
+                <li>Links: <code>&lt;a href="url"&gt;</code></li>
+                <li>Images: <code>&lt;img src="url" alt="description"&gt;</code></li>
+                <li>Forms: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code></li>
+            </ul>
+
+            <h3>2.2 CSS Basics</h3>
+            <h4>Syntax and Selectors:</h4>
+            <pre><code>selector {
+  property: value;
+}</code></pre>
+            <h4>Styling Elements:</h4>
+            <pre><code>body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#main-heading {
+  color: blue;
+}</code></pre>
+            <h4>Layout Techniques:</h4>
+            <ul>
+                <li><strong>Box Model:</strong> Understanding margin, border, padding, and content.</li>
+                <li><strong>Flexbox:</strong> For flexible and responsive layouts.</li>
+                <li><strong>Grid:</strong> For complex grid-based layouts.</li>
+            </ul>
+
+            <h3>2.3 JavaScript Basics</h3>
+            <h4>Syntax and Data Types:</h4>
+            <pre><code>let message = "Hello, World!";
+let age = 25;</code></pre>
+            <h4>Functions and Control Flow:</h4>
+            <pre><code>function greet(name) {
+  return `Hello, ${name}`;
+}
+
+if (age > 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}</code></pre>
+            <h4>DOM Manipulation:</h4>
+            <pre><code>document.getElementById('elementId').innerText = 'New Text';</code></pre>
+
+            <h3>2.4 Frontend Frameworks and Libraries</h3>
+            <h4>React.js:</h4>
+            <ul>
+                <li><strong>Components:</strong> Building reusable UI components.</li>
+                <li><strong>State Management:</strong> Managing component states using hooks.</li>
+            </ul>
+            <h4>Angular:</h4>
+            <ul>
+                <li><strong>Modules and Components:</strong> Structuring applications into modules and components.</li>
+                <li><strong>Services and Dependency Injection:</strong> Managing application logic and data.</li>
+            </ul>
+            <h4>Vue.js:</h4>
+            <ul>
+                <li><strong>Reactivity:</strong> Managing state and reactivity in components.</li>
+                <li><strong>Directives:</strong> Using built-in and custom directives for DOM manipulation.</li>
+            </ul>
+        </section>
+
+        <section id="backend">
+            <h2>3. Backend Development</h2>
+            <h3>3.1 Introduction to Server-Side Programming</h3>
+            <p><strong>What is Server-Side Programming?</strong> Writing code that runs on the server to handle client requests, process data, and send responses.</p>
+
+            <h3>3.2 Node.js and Express</h3>
+            <h4>Node.js Basics:</h4>
+            <h5>Setting Up Node.js:</h5>
+            <pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\\n');
+});
+
+server.listen(3000);</code></pre>
+            <h4>Express.js Basics:</h4>
+            <h5>Setting Up Express:</h5>
+            <pre><code>const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});</code></pre>
+            <h5>Routing and Middleware:</h5>
+            <pre><code>app.use(express.json());
+
+app.post('/data', (req, res) => {
+  res.send(`Received data: ${JSON.stringify(req.body)}`);
+});</code></pre>
+
+            <h3>3.3 Python and Django</h3>
+            <h4>Django Basics:</h4>
+            <h5>Setting Up Django:</h5>
+            <pre><code>pip install django
+django-admin startproject myproject</code></pre>
+            <h5>Creating a Django App:</h5>
+            <pre><code>python manage.py startapp myapp</code></pre>
+            <h5>Views and URLs:</h5>
+            <pre><code># views.py
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, World!")
+
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index),
+]</code></pre>
+
+            <h3>3.4 Java and Spring Boot</h3>
+            <h4>Spring Boot Basics:</h4>
+            <h5>Setting Up Spring Boot:</h5>
+            <pre><code>curl https://start.spring.io/starter.zip -d dependencies=web -d baseDir=myproject -o myproject.zip</code></pre>
+            <h5>Creating a Simple Controller:</h5>
+            <pre><code>@RestController
+public class HelloController {
+
+    @GetMapping("/")
+    public String index() {
+        return "Hello, World!";
+    }
+}</code></pre>
+        </section>
+
+        <section id="database">
+            <h2>4. Database Management</h2>
+            <h3>4.1 Relational Databases (SQL)</h3>
+            <h4>Introduction to SQL:</h4>
+            <h5>Basic Queries:</h5>
+            <pre><code>SELECT * FROM users;
+INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');</code></pre>
+            <h5>Database Design:</h5>
+            <ul>
+                <li><strong>Normalization:</strong> Organizing data to reduce redundancy.</li>
+                <li><strong>Relationships:</strong> Defining one-to-one, one-to-many, and many-to-many relationships.</li>
+            </ul>
+
+            <h3>4.2 NoSQL Databases</h3>
+            <h4>MongoDB Basics:</h4>
+            <h5>Document Structure:</h5>
+            <pre><code>{
+  "name": "John Doe",
+  "email": "john@example.com"
+}</code></pre>
+            <h5>Basic Operations:</h5>
+            <pre><code>db.users.insert({ name: "John Doe", email: "john@example.com" });
+db.users.find();</code></pre>
+        </section>
+
+        <section id="integration">
+            <h2>5. Full-Stack Integration</h2>
+            <h3>5.1 Connecting Frontend to Backend</h3>
+            <h4>AJAX Requests:</h4>
+            <pre><code>fetch('/api/data', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ key: 'value' })
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+
+            <h3>5.2 Authentication and Authorization</h3>
+            <ul>
+                <li><strong>User Authentication:</strong> Implementing login and registration using JWT, OAuth, or session-based authentication.</li>
+                <li><strong>Authorization:</strong> Managing user permissions and roles to control access to different parts of the application.</li>
+            </ul>
+
+            <h3>5.3 Deployment</h3>
+            <ul>
+                <li><strong>Deployment Platforms:</strong> Heroku, AWS, Docker.</li>
+                <li><strong>Heroku:</strong> Easy deployment of Node.js applications.</li>
+                <li><strong>AWS:</strong> Comprehensive cloud services for deploying and managing applications.</li>
+                <li><strong>Docker:</strong> Containerization of applications for consistent deployment environments.</li>
+            </ul>
+
+            <h3>5.4 CI/CD Pipelines</h3>
+            <ul>
+                <li><strong>Continuous Integration (CI):</strong> Automating the process of code integration and testing.</li>
+                <li><strong>Continuous Deployment (CD):</strong> Automating the deployment process to production environments.</li>
+            </ul>
+        </section>
+
+        <section id="project">
+            <h2>6. Project Work</h2>
+            <h3>6.1 Building a Full-Stack Application</h3>
+            <ul>
+                <li><strong>Project Setup:</strong> Define project requirements, plan the architecture, and set up repositories.</li>
+                <li><strong>Frontend Development:</strong> Design and implement the user interface.</li>
+                <li><strong>Backend Development:</strong> Develop server-side logic and API endpoints.</li>
+                <li><strong>Database Integration:</strong> Connect the application to a database.</li>
+                <li><strong>Testing:</strong> Write and run tests for both frontend and backend components.</li>
+                <li><strong>Deployment:</strong> Deploy the application to a cloud platform or server.</li>
+            </ul>
+
+            <h3>6.2 Capstone Project</h3>
+            <ul>
+                <li><strong>Project Description:</strong> Build a complete web application that integrates all the learned technologies.</li>
+                <li><strong>Requirements:</strong> Define the features and functionality of the application.</li>
+                <li><strong>Development Process:</strong> Follow a structured development process from planning to deployment.</li>
+            </ul>
+        </section>
+
+        <section id="summary">
+            <h2>7. Summary</h2>
+            <ul>
+                <li><strong>Introduction to Full-Stack Development:</strong> Understanding the roles and technologies involved.</li>
+                <li><strong>Frontend Development:</strong> HTML, CSS, JavaScript, and frontend frameworks.</li>
+                <li><strong>Backend Development:</strong> Node.js, Express, Python/Django, Java/Spring Boot.</li>
+                <li><strong>Database Management:</strong> SQL and NoSQL databases.</li>
+                <li><strong>Full-Stack Integration:</strong> Connecting frontend and backend, authentication, and deployment.</li>
+                <li><strong>Project Work:</strong> Building and deploying a full-stack application.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

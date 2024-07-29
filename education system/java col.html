@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Collection Framework</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Java Collection Framework</h1>
+    </header>
+
+    <main>
+        <section id="introduction" class="course-section">
+            <h2>Introduction</h2>
+            <p>The Java Collection Framework provides a set of classes and interfaces that implement commonly reusable collection data structures. It is a unified architecture for representing and manipulating collections, enabling collections to be manipulated independently of the details of their representation.</p>
+        </section>
+
+        <section id="key-interfaces" class="course-section">
+            <h2>Key Interfaces of the Collection Framework</h2>
+            <h3>Collection Interface</h3>
+            <p>The root interface of the collection hierarchy. It includes methods that perform basic operations, such as adding and removing elements.</p>
+            <h3>List Interface</h3>
+            <p>Ordered collections that allow duplicate elements. Examples: ArrayList, LinkedList. Allows positional access and insertion of elements.</p>
+            <h3>Set Interface</h3>
+            <p>Collections that do not allow duplicate elements. Examples: HashSet, LinkedHashSet, TreeSet. Models mathematical set abstraction.</p>
+            <h3>Queue Interface</h3>
+            <p>Collections used to hold multiple elements prior to processing. Examples: PriorityQueue, LinkedList. Typically orders elements in FIFO (first-in-first-out) manner.</p>
+            <h3>Deque Interface</h3>
+            <p>Double-ended queue that supports element insertion and removal at both ends. Examples: ArrayDeque, LinkedList. Extends the Queue interface.</p>
+            <h3>Map Interface</h3>
+            <p>Object that maps keys to values, cannot contain duplicate keys. Examples: HashMap, LinkedHashMap, TreeMap. Each key can map to at most one value.</p>
+        </section>
+
+        <section id="key-classes" class="course-section">
+            <h2>Key Classes of the Collection Framework</h2>
+            <h3>ArrayList</h3>
+            <p>A resizable array implementation of the List interface. Provides random access to elements with constant time complexity O(1).</p>
+            <h3>LinkedList</h3>
+            <p>Doubly-linked list implementation of the List and Deque interfaces. Provides linear time complexity O(n) for accessing elements.</p>
+            <h3>HashSet</h3>
+            <p>Implements the Set interface, backed by a hash table. Best for operations where quick access to unique elements is needed.</p>
+            <h3>LinkedHashSet</h3>
+            <p>Ordered version of HashSet that maintains a doubly-linked list running through all its entries. Provides predictable iteration order.</p>
+            <h3>TreeSet</h3>
+            <p>Implements the NavigableSet interface, backed by a TreeMap. Elements are ordered using their natural ordering or a specified comparator.</p>
+            <h3>PriorityQueue</h3>
+            <p>An unbounded priority queue based on a priority heap. Elements are ordered either by natural ordering or by a comparator provided at queue construction time.</p>
+            <h3>HashMap</h3>
+            <p>Hash table-based implementation of the Map interface. Provides constant-time performance for basic operations like get and put.</p>
+            <h3>LinkedHashMap</h3>
+            <p>Extends HashMap with a predictable iteration order. Maintains a doubly-linked list running through all its entries.</p>
+            <h3>TreeMap</h3>
+            <p>Implements the NavigableMap interface, backed by a red-black tree. Orders keys based on their natural ordering or a specified comparator.</p>
+        </section>
+
+        <section id="important-methods" class="course-section">
+            <h2>Important Methods in Collection Framework</h2>
+            <h3>Add Elements</h3>
+            <ul>
+                <li>add(E e): Adds the specified element to the collection.</li>
+                <li>addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this collection.</li>
+            </ul>
+            <h3>Remove Elements</h3>
+            <ul>
+                <li>remove(Object o): Removes a single instance of the specified element from the collection.</li>
+                <li>removeAll(Collection<?> c): Removes all of the elements in the specified collection from this collection.</li>
+            </ul>
+            <h3>Access Elements</h3>
+            <ul>
+                <li>get(int index): Returns the element at the specified position in a list.</li>
+                <li>element(), peek(): Retrieves, but does not remove, the head of the queue.</li>
+            </ul>
+            <h3>Iterate Through Elements</h3>
+            <ul>
+                <li>iterator(): Returns an iterator over the elements in the collection.</li>
+                <li>forEach(Consumer<? super E> action): Performs the given action for each element of the collection.</li>
+            </ul>
+            <h3>Check Collection State</h3>
+            <ul>
+                <li>contains(Object o): Returns true if the collection contains the specified element.</li>
+                <li>isEmpty(): Returns true if the collection contains no elements.</li>
+                <li>size(): Returns the number of elements in the collection.</li>
+            </ul>
+        </section>
+
+        <section id="examples" class="course-section">
+            <h2>Examples of Using Collection Framework</h2>
+            <h3>Example 1: Using ArrayList</h3>
+            <pre><code>import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        ArrayList&lt;String&gt; list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+        
+        for (String fruit : list) {
+            System.out.println(fruit);
+        }
+    }
+}</code></pre>
+
+            <h3>Example 2: Using HashMap</h3>
+            <pre><code>import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        HashMap&lt;String, Integer&gt; map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Cherry", 3);
+        
+        for (String key : map.keySet()) {
+            System.out.println(key + ": " + map.get(key));
+        }
+    }
+}</code></pre>
+        </section>
+
+        <section id="benefits" class="course-section">
+            <h2>Benefits of Using Collection Framework</h2>
+            <ul>
+                <li>Reduces Programming Effort: Provides reusable data structures and algorithms, saving time and effort.</li>
+                <li>Increases Program Speed and Quality: Collections are highly optimized and tested for performance and correctness.</li>
+                <li>Provides Interoperability: Standardized interfaces enable collections to be passed around and manipulated independently of the implementation.</li>
+                <li>Reduces Learning Effort: Common interface names and consistent use patterns make it easier to learn and use.</li>
+            </ul>
+        </section>
+
+        <section id="conclusion" class="course-section">
+            <h2>Conclusion</h2>
+            <p>The Java Collection Framework is a powerful tool for handling groups of objects. Understanding its interfaces, classes, and methods allows you to efficiently manipulate and organize data, ultimately leading to more robust and maintainable Java applications.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

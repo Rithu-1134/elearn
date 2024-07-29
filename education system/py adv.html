@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Python Concepts</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Advanced Python Concepts</h1>
+    </header>
+
+    <main>
+        <section id="decorators" class="course-section">
+            <h2>Decorators</h2>
+            <p>Decorators are a design pattern in Python that allows the modification of functions or methods using other functions. They are often used to add functionality to existing code in a clean and readable way.</p>
+            <pre><code>def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()</code></pre>
+        </section>
+
+        <section id="generators-and-iterators" class="course-section">
+            <h2>Generators and Iterators</h2>
+            
+            <h3>Generators</h3>
+            <p>Generators are a simple way to create iterators using a function that yields values one at a time. They allow for efficient memory usage by generating values on the fly rather than storing them in memory.</p>
+            <pre><code>def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
+
+counter = count_up_to(5)
+for num in counter:
+    print(num)</code></pre>
+            
+            <h3>Iterators</h3>
+            <p>An iterator is an object representing a stream of data; it implements the iterator protocol, which consists of the methods __iter__() and __next__().</p>
+            <pre><code>class MyIterator:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current >= self.end:
+            raise StopIteration
+        else:
+            self.current += 1
+            return self.current - 1
+
+for num in MyIterator(1, 5):
+    print(num)</code></pre>
+        </section>
+
+        <section id="context-managers" class="course-section">
+            <h2>Context Managers</h2>
+            <p>Context managers allow for the setup and teardown of resources, ensuring that resources are properly managed. They are commonly used with the <code>with</code> statement.</p>
+            <pre><code>class MyContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
+
+with MyContextManager():
+    print("Inside the context")</code></pre>
+        </section>
+
+        <section id="metaclasses" class="course-section">
+            <h2>Metaclasses</h2>
+            <p>Metaclasses are the 'classes of classes' that define how classes behave. A class is an instance of a metaclass. Metaclasses allow for the modification of class creation.</p>
+            <pre><code>class MyMeta(type):
+    def __new__(cls, name, bases, dct):
+        print(f"Creating class {name}")
+        return super().__new__(cls, name, bases, dct)
+
+class MyClass(metaclass=MyMeta):
+    pass
+
+instance = MyClass()</code></pre>
+        </section>
+
+        <section id="abstract-base-classes" class="course-section">
+            <h2>Abstract Base Classes (ABCs)</h2>
+            <p>Abstract Base Classes provide a way to define abstract methods that must be implemented by derived classes. They are enforced using the <code>abc</code> module.</p>
+            <pre><code>from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+    @abstractmethod
+    def do_something(self):
+        pass
+
+class MyConcreteClass(MyAbstractClass):
+    def do_something(self):
+        print("Doing something!")
+
+instance = MyConcreteClass()
+instance.do_something()</code></pre>
+        </section>
+
+        <section id="coroutines-and-asyncio" class="course-section">
+            <h2>Coroutines and Asyncio</h2>
+
+            <h3>Coroutines</h3>
+            <p>Coroutines are special functions that can pause and resume their execution. They are used for asynchronous programming.</p>
+            <pre><code>import asyncio
+
+async def my_coroutine():
+    print("Hello")
+    await asyncio.sleep(1)
+    print("World")
+
+asyncio.run(my_coroutine())</code></pre>
+            
+            <h3>Asyncio</h3>
+            <p>Asyncio is a library to write concurrent code using the async/await syntax.</p>
+            <pre><code>import asyncio
+
+async def fetch_data():
+    print("Start fetching data")
+    await asyncio.sleep(2)
+    print("Done fetching data")
+    return {'data': 123}
+
+async def main():
+    data = await fetch_data()
+    print(data)
+
+asyncio.run(main())</code></pre>
+        </section>
+
+        <section id="type-hints-and-annotations" class="course-section">
+            <h2>Type Hints and Annotations</h2>
+            <p>Type hints provide a way to specify the expected data types of variables and function arguments/returns. They improve code readability and help with static analysis tools.</p>
+            <pre><code>def add(x: int, y: int) -> int:
+    return x + y
+
+def greeting(name: str) -> str:
+    return f"Hello, {name}"</code></pre>
+        </section>
+
+        <section id="data-classes" class="course-section">
+            <h2>Data Classes</h2>
+            <p>Data classes are a way to automatically generate special methods like __init__(), __repr__(), and __eq__() for classes. They were introduced in Python 3.7 using the dataclasses module.</p>
+            <pre><code>from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+point = Point(1, 2)
+print(point)</code></pre>
+        </section>
+
+        <section id="advanced-list-comprehensions" class="course-section">
+            <h2>Advanced List Comprehensions</h2>
+            <p>List comprehensions provide a concise way to create lists. They can include complex conditions and nested loops.</p>
+            <pre><code>matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flat = [num for row in matrix for num in row if num % 2 == 0]
+print(flat)</code></pre>
+        </section>
+
+        <section id="slots" class="course-section">
+            <h2>Slots</h2>
+            <p>The __slots__ mechanism allows you to explicitly declare data members to save memory and restrict attribute creation. It is useful in memory-intensive applications.</p>
+            <pre><code>class MyClass:
+    __slots__ = ['name', 'age']
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+instance = MyClass('John', 30)</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="completion">
+            <input type="checkbox" id="completion-checkbox">
+            <label for="completion-checkbox">I have reviewed all sections</label>
+            <button id="go-back-btn" onclick="window.location.href='index.html'">Back to Main Page</button>
+        </div>
+        <p>&copy; 2024 E-LearnX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'python.html'; // Replace with your main page URL
+        });
+    </script>
+</body>
+</html>

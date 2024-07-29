@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML and CSS</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to HTML and CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="#html-introduction">Introduction to HTML</a></li>
+                <li><a href="#css-introduction">Introduction to CSS</a></li>
+                <li><a href="#advanced-html">Advanced HTML Elements</a></li>
+                <li><a href="#advanced-css">Advanced CSS Styling</a></li>
+                <li><a href="#responsive-design">Responsive Design</a></li>
+                <li><a href="#best-practices">Best Practices and Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="html-introduction">
+            <h2>1. Introduction to HTML</h2>
+            <h3>What is HTML?</h3>
+            <p><strong>Definition:</strong> HTML is the standard markup language used to create the structure of web pages. It consists of a series of elements, which you use to enclose different parts of the content to make it appear a certain way.</p>
+            <p><strong>Structure:</strong> HTML documents are structured with a tree-like hierarchy of elements.</p>
+
+            <h3>Basic Structure of an HTML Document</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+        &lt;main&gt;
+            &lt;section id="home"&gt;
+                &lt;h2&gt;Home Section&lt;/h2&gt;
+                &lt;p&gt;This is the home section of the page.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section id="about"&gt;
+                &lt;h2&gt;About Section&lt;/h2&gt;
+                &lt;p&gt;This is the about section of the page.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section id="contact"&gt;
+                &lt;h2&gt;Contact Section&lt;/h2&gt;
+                &lt;p&gt;This is the contact section of the page.&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+        &lt;footer&gt;
+            &lt;p&gt;&copy; 2024 My Website&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="css-introduction">
+            <h2>2. Introduction to CSS</h2>
+            <h3>What is CSS?</h3>
+            <p><strong>Definition:</strong> CSS is a stylesheet language used to describe the presentation of a document written in HTML or XML. It controls the layout, colors, fonts, and overall look of web pages.</p>
+
+            <h3>CSS Syntax</h3>
+            <pre><code>/* This is a CSS comment */
+selector {
+    property: value;
+    property: value;
+}</code></pre>
+
+            <h3>Basic CSS Properties</h3>
+            <h4>Text Formatting:</h4>
+            <pre><code>color: Sets the text color;
+font-size: Sets the size of the font;
+font-family: Specifies the typeface;</code></pre>
+
+            <h4>Box Model:</h4>
+            <pre><code>width: Sets the width of an element;
+height: Sets the height of an element;
+padding: Space between the content and the border;
+border: Sets the border properties;
+margin: Space outside the border;</code></pre>
+
+            <h4>Layout:</h4>
+            <pre><code>display: Specifies the display type (block, inline, flex, grid);
+position: Specifies the positioning scheme (static, relative, absolute, fixed, sticky);
+top, right, bottom, left: Specifies the position offsets;</code></pre>
+
+            <h4>Backgrounds and Borders:</h4>
+            <pre><code>background-color: Sets the background color;
+background-image: Sets a background image;
+border-radius: Rounds the corners of the border;</code></pre>
+
+            <h4>Flexbox Layout:</h4>
+            <pre><code>display: flex; Enables flexbox layout;
+flex-direction: Defines the direction of the flex container's main axis (row, column);
+justify-content: Aligns items along the main axis;
+align-items: Aligns items along the cross axis;</code></pre>
+
+            <h3>Example CSS</h3>
+            <pre><code>/* Styling the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styling the header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}</code></pre>
+        </section>
+
+        <section id="advanced-html">
+            <h2>3. Advanced HTML Elements and Attributes</h2>
+            <h3>Form Elements</h3>
+            <pre><code>&lt;input type="text" placeholder="Enter text"&gt;
+&lt;input type="email" placeholder="Enter email"&gt;
+
+&lt;textarea rows="4" cols="50"&gt;Enter your message here...&lt;/textarea&gt;
+
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;input type="checkbox" id="subscribe"&gt;&lt;label for="subscribe"&gt;Subscribe&lt;/label&gt;
+&lt;input type="radio" name="gender" value="male" id="male"&gt;&lt;label for="male"&gt;Male&lt;/label&gt;</code></pre>
+
+            <h3>HTML5 Semantic Elements</h3>
+            <p>&lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;aside&gt;, &lt;main&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;mark&gt;.</p>
+        </section>
+
+        <section id="advanced-css">
+            <h2>4. Advanced CSS Styling</h2>
+            <h3>Selectors</h3>
+            <h4>Universal Selector:</h4>
+            <pre><code>* {
+    box-sizing: border-box;
+}</code></pre>
+
+            <h4>Class Selector:</h4>
+            <pre><code>.className {
+    color: blue;
+}</code></pre>
+
+            <h4>ID Selector:</h4>
+            <pre><code>#idName {
+    background-color: yellow;
+}</code></pre>
+
+            <h4>Attribute Selector:</h4>
+            <pre><code>a[href*="example"] {
+    color: red;
+}</code></pre>
+
+            <h3>Pseudo-Classes and Pseudo-Elements</h3>
+            <h4>Pseudo-Classes:</h4>
+            <pre><code>a:hover {
+    color: green;
+}
+input:focus {
+    border: 2px solid blue;
+}</code></pre>
+
+            <h4>Pseudo-Elements:</h4>
+            <pre><code>p::first-line {
+    font-weight: bold;
+}
+p::after {
+    content: " - End of paragraph";
+}</code></pre>
+
+            <h3>CSS Flexbox and Grid</h3>
+            <h4>Flexbox Example:</h4>
+            <pre><code>.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item {
+    flex: 1;
+    text-align: center;
+}</code></pre>
+
+            <h4>Grid Example:</h4>
+            <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.grid-item {
+    padding: 20px;
+    background-color: #ddd;
+    text-align: center;
+}</code></pre>
+        </section>
+
+        <section id="responsive-design">
+            <h2>5. Responsive Design</h2>
+            <h3>Media Queries</h3>
+            <h4>Basic Syntax:</h4>
+            <pre><code>@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}</code></pre>
+
+            <h4>Example:</h4>
+            <pre><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 1 1 100%;
+    }
+}</code></pre>
+
+            <h3>Responsive Frameworks</h3>
+            <h4>Bootstrap:</h4>
+            <pre><code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"&gt;</code></pre>
+
+            <h4>Foundation:</h4>
+            <pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"&gt;</code></pre>
+        </section>
+
+        <section id="best-practices">
+            <h2>6. Best Practices and Tips</h2>
+            <h3>Organize Your Code:</h3>
+            <ul>
+                <li>Use meaningful class and ID names.</li>
+                <li>Keep CSS in separate files for better maintainability.</li>
+            </ul>
+
+            <h3>Use Semantic HTML:</h3>
+            <p>Use semantic tags to enhance accessibility and SEO.</p>
+
+            <h3>Optimize Performance:</h3>
+            <ul>
+                <li>Minimize CSS and JS files.</li>
+                <li>Use sprites for images.</li>
+            </ul>
+
+            <h3>Test Responsiveness:</h3>
+            <p>Use browser tools to test on different screen sizes.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>
